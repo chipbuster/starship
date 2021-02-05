@@ -59,10 +59,12 @@ curl -fsSL https://starship.rs/install.sh | bash -s -- --platform unknown-linux-
 ## Why don't I see a glyph symbol in my prompt?
 
 The most common cause of this is system misconfiguration. Some Linux distros in
-particular do not come with font support out-of-the-box. You need to ensure that:
+particular do not come with font support out-of-the-box. For these distros, you 
+will need to ensure that:
 
-- Your locale is set to a UTF-8 value, like `de_DE.UTF-8` or `ja_JP.UTF-8`. If `LC_ALL` is not a UTF-8 value,
-  [you will need to change it](https://www.tecmint.com/set-system-locales-in-linux/).
+- Your locale is set to a UTF-8 value, like `de_DE.UTF-8` or `ja_JP.UTF-8`. If you do not have
+  a UTF-8 locale, [you will need to change it](https://www.tecmint.com/set-system-locales-in-linux/).
+  You can usually check this with `locale` or `localectl`.
 - You have an emoji font installed. Most systems come with an emoji font by default, but
   some (notably Arch Linux) do not. You can usually install one through your system's
   package manager--[noto emoji](https://www.google.com/get/noto/help/emoji/) is a popular choice.
