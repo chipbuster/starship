@@ -955,9 +955,9 @@ dependencies = [
 
 [[package]]
 name = "notify-rust"
-version = "4.4.1"
+version = "4.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bec68da15a9508696cd0d38cc81c6a00a465daff743f05d9f4fd7c8f7c11f4e5"
+checksum = "2a2ca742cd7268b60c35828d318357f0b1bb9b82088e157ccf3013eb3ce70247"
 dependencies = [
  "mac-notification-sys",
  "serde",
