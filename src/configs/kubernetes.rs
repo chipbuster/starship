@@ -14,6 +14,7 @@ pub struct KubernetesConfig<'a> {
     pub detect_extensions: Vec<&'a str>,
     pub detect_files: Vec<&'a str>,
     pub detect_folders: Vec<&'a str>,
+    pub environments: Vec<KubernetesEnvironmentStyleOverride<'a>>,
 }
 
 impl<'a> Default for KubernetesConfig<'a> {
@@ -28,6 +29,16 @@ impl<'a> Default for KubernetesConfig<'a> {
             detect_extensions: vec![],
             detect_files: vec![],
             detect_folders: vec![],
+            environments: vec![],
         }
     }
+}
+
+#[derive(Clone, Deserialize, Serialize, Default)]
+#[cfg_attr(feature = "config-schema", derive(schemars::JsonSchema))]
+#[serde(default)]
+pub struct KubernetesEnvironmentStyleOverride<'a> {
+    pub name: &'a str,
+    pub symbol: &'a str,
+    pub style: &'a str,
 }
